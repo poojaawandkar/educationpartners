@@ -1233,13 +1233,13 @@ body {
   }
   .edu-search-bar-wrapper {
     width: 100vw;
-    padding: 0 8px;
+    padding: 0 12px;
     box-sizing: border-box;
     margin: 18px 0 0 0;
   }
   .edu-search-bar {
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     box-sizing: border-box;
     font-size: 16px;
   }
@@ -1332,7 +1332,7 @@ body {
     gap: 10px;
     width: 100vw;
     max-width: 100vw;
-    padding: 0 4px;
+    padding: 0 15px;
     box-sizing: border-box;
   }
   .edu-filter-col {
@@ -1428,4 +1428,254 @@ body {
     white-space: nowrap;
     box-sizing: border-box;
   }
+}
+
+/* 1. Make .incubation-center card height auto at all breakpoints */
+.incubation-center {
+  height: auto !important;
+  min-height: 220px;
+  max-width: 100vw;
+}
+@media (max-width: 1200px) {
+  .incubation-center {
+    height: auto !important;
+    min-height: 200px;
+    max-width: 100vw;
+  }
+}
+@media (max-width: 900px) {
+  .incubation-center {
+    height: auto !important;
+    min-height: 180px;
+    max-width: 100vw;
+  }
+}
+@media (max-width: 600px) {
+  .incubation-center {
+    height: auto !important;
+    min-height: 160px;
+    max-width: 100vw;
+  }
+}
+
+/* 2. Ensure .edu-filter-bar-sticky always has background and z-index */
+.edu-filter-bar-sticky {
+  background: #232323 !important;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* 3. Add box-sizing: border-box and max-width: 100vw to main containers */
+.App, .edu-centered-content, .incubation-section, .main-heading, .footer {
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* 4. Prevent horizontal scroll on html/body */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* 5. Footer polish for mid-sized screens */
+@media (max-width: 1200px) {
+  .footer-logo {
+    height: 70px;
+    margin: 20px auto 10px auto;
+  }
+  .footer-left {
+    min-width: 180px;
+    padding-left: 0;
+  }
+  .footer-left p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 900px) {
+  .footer-logo {
+    height: 60px;
+    margin: 10px auto 10px auto;
+  }
+  .footer-left {
+    min-width: 120px;
+    padding-left: 0;
+  }
+  .footer-left p {
+    font-size: 12px;
+  }
+}
+
+/* 6. Ensure .incubation-logo images are always contained and responsive */
+.incubation-logo, .incubation-logo.no-logo {
+  object-fit: contain;
+  width: 100%;
+  max-width: 160px;
+  max-height: 160px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .incubation-logo, .incubation-logo.no-logo {
+    max-width: 120px;
+    max-height: 120px;
+  }
+}
+@media (max-width: 600px) {
+  .incubation-logo, .incubation-logo.no-logo {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+
+/* 1. Use auto-fit minmax for grid columns above 600px */
+.edu-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  justify-items: center;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1400px;
+  box-sizing: border-box;
+}
+@media (max-width: 900px) {
+  .edu-grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .edu-grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+    width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+  }
+}
+
+/* 2. Remove fixed width/max-width on .incubation-center */
+.incubation-center {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  height: auto !important;
+  min-height: 160px;
+  box-sizing: border-box;
+  margin: 0 auto 18px auto;
+}
+
+/* 3. Add padding to .edu-centered-content and .incubation-section */
+.edu-centered-content, .incubation-section {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (max-width: 600px) {
+  .edu-centered-content, .incubation-section {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+/* 4. Ensure .incubation-center and .incubation-card-content use width: 100% and box-sizing */
+.incubation-center, .incubation-card-content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 5. Remove overflow-x: hidden from .edu-centered-content and .incubation-section */
+.edu-centered-content, .incubation-section {
+  overflow-x: visible;
+}
+
+/* 1. Fixed logo size and alignment for all cards */
+.incubation-logo, .incubation-logo.no-logo {
+  width: 120px !important;
+  height: 120px !important;
+  min-width: 120px !important;
+  min-height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  object-fit: contain !important;
+  margin: 0 auto 24px auto !important; /* fixed margin to align names */
+  background: #fff;
+  border-radius: 12px;
+}
+
+/* 2. Ensure .incubation-card-content uses flex column and aligns center */
+.incubation-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 28px 18px 18px 18px;
+}
+
+/* 3. Remove any conflicting logo sizing at breakpoints */
+@media (max-width: 900px) {
+  .incubation-logo, .incubation-logo.no-logo {
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px !important;
+    min-height: 120px !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
+    margin-bottom: 24px !important;
+  }
+}
+@media (max-width: 600px) {
+  .incubation-logo, .incubation-logo.no-logo {
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 100px !important;
+    min-height: 100px !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* 1. Set a max-width for each card and prevent excessive growth */
+.incubation-center {
+  max-width: 340px;
+  width: 100%;
+  min-width: 0;
+  margin: 0 auto 18px auto;
+  height: auto !important;
+  min-height: 220px;
+  box-sizing: border-box;
+}
+
+/* 2. Make grid more flexible for card sizing */
+.edu-grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+@media (max-width: 900px) {
+  .edu-grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .edu-grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 3. Ensure .incubation-card-content fills the card but does not force it to grow */
+.incubation-card-content {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
 }
